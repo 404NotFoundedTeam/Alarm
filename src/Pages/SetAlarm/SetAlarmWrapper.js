@@ -48,7 +48,8 @@ const SetAlarmWrapper = styled.section`
   }
 
   .css-jsexje-MuiSwitch-thumb {
-    background-color: #777777;
+    background-color: gold;
+    box-shadow: 0 0 5px gold;
   }
 
   .MuiSwitch-input:checked .css-jsexje-MuiSwitch-thumb {

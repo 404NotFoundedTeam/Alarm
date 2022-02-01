@@ -63,8 +63,8 @@ const Alarm = () => {
 	return (
 		<AlarmWrapper>
 			<div className="row justify-content-center w-100" >
-				<div className="col-md-6 col-lg-5 col-xxl-4 px-3 py-3 mainAlarms">
-					<div className="alarm-header w-100 text-center py-5">
+				<div className="col-md-6 col-lg-5 col-xxl-4 px-3 mainAlarms">
+					<div className="alarm-header w-100 text-center pt-3">
 						<p className="title">Upcoming alarm</p>
 						<h2 className={"upcoming-time"}>6 hours 45 minutes</h2>
 {/*<<<<<<< HEAD*/}

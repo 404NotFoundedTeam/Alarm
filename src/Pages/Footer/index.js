@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 
 
 const Footer = () => {
-	const [active, setActive] = useState();
+	let [active, setActive] = useState();
+	
 	let lastActive = (e) => {
-		if (active) active.classList.remove('active');
+		if(active) active.classList.remove('active');
+		else document.querySelector('.active').classList.remove('active');
 		e.target.parentElement.classList.add('active');
 		setActive(e.target.parentElement);
 	}
@@ -14,7 +16,7 @@ const Footer = () => {
 		<FooterWrapper>
 			<div className="container">
 				<div className="row w-100 text-center">
-					<div className="col-4">
+					<div className="col-4 active" id="home">
 						<Link to={"/"} onClick={(e)=> {lastActive(e)}}>Alarm</Link>
 					</div>
 					<div className="col-4">

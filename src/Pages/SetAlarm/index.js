@@ -26,6 +26,7 @@ const SetAlarm = () => {
     navigate(`/`);
   }
   return (
+
     <SetAlarmWrapper>
       <div className="container-fluid">
         <div className="row justify-content-center flex-column align-items-center">

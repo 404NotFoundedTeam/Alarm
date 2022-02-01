@@ -5,6 +5,7 @@ const AlarmWrapper = styled.div`
 .mainAlarms{
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
   .alarm-header {
     width: 100%;
@@ -44,8 +45,14 @@ const AlarmWrapper = styled.div`
       color: #FBE206;
     }
   }
+  .alarms::-webkit-scrollbar {
+    display: none;
+  }
   .alarms{
     width: 100%;
+    height: 100%;
+    flex: 1;
+    overflow: auto;
     li{
       display: flex;
       justify-content: space-between;

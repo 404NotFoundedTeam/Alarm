@@ -6,7 +6,7 @@ const saveTime = [];
 
 function Sekundomer() {
   const [time, setTime] = useState({ ms: 0, s: 0, m: 0, h: 0 });
-  const [interv, setInterv] = useState();
+  const [interv, setInterv] = useState(0);
   const [status, setStatus] = useState(0);
   // Not started = 0
   // started = 1
@@ -40,21 +40,25 @@ function Sekundomer() {
     return setTime({ ms: updatedMs, s: updatedS, m: updatedM, h: updatedH });
   };
 
-  const stop = () => {
-    clearInterval(interv);
-    setStatus(2);
-    saveTime.push(time);
-    console.log(saveTime);
-  };
+  // const stop = () => {
+  //   clearInterval(interv);
+  //   setStatus(2);
+  //   saveTime.push(time);
+  //   console.log(saveTime);
+  // };
 
   const reset = () => {
+    // stop();
     clearInterval(interv);
     setStatus(0);
     setTime({ ms: 0, s: 0, m: 0, h: 0 });
     saveTime.splice(0, saveTime.length);
   };
 
-  const resume = () => start();
+  const resume = () => {
+    // start();
+    saveTime.push(time);
+  };
 
   return (
     <SekundomerWrapper>
@@ -63,17 +67,20 @@ function Sekundomer() {
         status={status}
         resume={resume}
         reset={reset}
-        stop={stop}
+        // stop={stop}
         start={start}
       />
       <div className="text-white">
         <div className="row">
           <div className="col-12">
-            {saveTime.map((e) => {
+            {saveTime.map((e, i) => {
               return (
-                <div className="borderBottom">
-                  {e.h ? e.h`.` : ""} {e.m ? e.m`.` : ""}
-                  {e.s} . {e.ms}
+                <div className="borderBottom my-4">
+                  <span className="me-4">{i + 1}.</span>
+                  <span className="text-white orbitron ">
+                    {e.h ? e.h : ""} {e.m ? e.m + "." : ""}
+                    {e.s}.{e.ms}
+                  </span>
                 </div>
               );
             })}

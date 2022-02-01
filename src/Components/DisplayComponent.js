@@ -13,7 +13,7 @@ function DisplayComponent(props) {
     }
   };
   return (
-    <div className="d-flex justify-content-center">
+    <div className="sekund d-flex">
       {h()}
       <span className="mainColor">
         {props.time.m >= 10 ? props.time.m : "0" + props.time.m}.

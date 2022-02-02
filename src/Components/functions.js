@@ -1,3 +1,5 @@
+import {useEffect, useState} from "react";
+
 const getTimes = () => {
 	const date = new Date();
 	const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -14,7 +16,7 @@ const getTimes = () => {
 	];
 
 	const obj = {
-		month: monthNames[date.getMonth()].slice(0, 3),
+		month: monthNames[date.getMonth()-1].slice(0, 3),
 		hour: date.getHours(),
 		monthDay: date.getDate(),
 		minutes: date.getMinutes(),
@@ -23,4 +25,34 @@ const getTimes = () => {
 	}
 	return obj;
 }
-export { getTimes }
+
+const PlayAudio = url => {
+	const [audio] = useState(new Audio(url));
+	const [playing, setPlaying] = useState(false);
+
+	const toggle = (isPlay) => {
+		if(!playing){
+			setPlaying(isPlay)
+		}
+	};
+
+	useEffect(() => {
+			if(playing){
+				audio.play();
+			}
+			else {
+				audio.pause();
+				audio.currentTime = 0;
+			}
+		},
+		[playing]
+	)
+	audio.addEventListener('ended', function() {
+		this.currentTime = 0;
+		this.play();
+	}, false);
+
+	return toggle;
+};
+
+export { getTimes, PlayAudio }

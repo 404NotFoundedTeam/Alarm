@@ -17,12 +17,13 @@ const SetAlarm = () => {
       sound,
       vibration,
       snooze,
-      actives: [2, 3,],
+      actives: [2, 5,1],
+      date: new Date(date).toLocaleDateString() + new Date(date).toLocaleTimeString(),
       hours: (new Date(date)).getHours(),
       minutes: (new Date(date)).getMinutes(),
+      time: (new Date(date)).getTime(),
     }
     dataAlarms.push(alarmInfo);
-    console.log(dataAlarms);
     navigate(`/`);
   }
   return (

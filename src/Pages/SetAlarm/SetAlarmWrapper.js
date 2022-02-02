@@ -38,6 +38,23 @@ const SetAlarmWrapper = styled.section`
     color: gold;
   }
 
+  .weekday-btns {
+    padding: 8px 0;
+    gap: 4px;
+    button {
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      font-size: 12px;
+      display: grid;
+      place-items: center;
+    }
+    .active-day {
+      border: 1px solid gold !important;
+      color: gold;
+    }
+  }
+
   .MuiSwitch-input {
     left: unset !important;
   }

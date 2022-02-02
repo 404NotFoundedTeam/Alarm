@@ -59,7 +59,6 @@ const Alarm = () => {
 
 	return (
 		<AlarmWrapper>
-			<Button onClick={() => {setAudio(false)}}>false</Button>
 			<div className="row justify-content-center w-100" >
 				<div className="col-md-6 col-lg-5 col-xxl-4 px-3 mainAlarms">
 					<div className="alarm-header w-100 text-center pt-3">

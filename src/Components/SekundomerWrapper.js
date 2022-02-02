@@ -33,7 +33,7 @@ const SekundomerWrapper = styled.div`
     width: 100px;
   }
   .row {
-    height: 55vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
   }

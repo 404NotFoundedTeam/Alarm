@@ -63,12 +63,12 @@ const SetAlarm = () => {
               <TextField
                 id="datetime-local"
                 onChange={(e) => {
-                  document.querySelectorAll('.weekDays').forEach(
-                    (item) => {
-                      if (item.getAttribute('data-day') === `${(new Date(e.target.value)).getDay()}`)
-                      item.click();
-                    }
-                  )
+                  // document.querySelectorAll('.weekDays').forEach(
+                  //   (item) => {
+                  //     if (item.getAttribute('data-day') === `${(new Date(e.target.value)).getDay()}`)
+                  //     item.click();
+                  //   }
+                  // )
                   setDate(e.target.value);
                 }}
                 type="datetime-local"
@@ -76,6 +76,7 @@ const SetAlarm = () => {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                required
               />
               <div className="d-flex align-items-center weekday-btns">
                 <button data-day="0" className="weekDays" onClick={getDay}>S</button>

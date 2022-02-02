@@ -57,6 +57,8 @@ const Alarm = () => {
 		setModal(false)
 	}
 
+	dataAlarms.sort((a, b) => a.time - b.time);
+
 	return (
 		<AlarmWrapper>
 			<div className="row justify-content-center w-100" >
@@ -73,7 +75,7 @@ const Alarm = () => {
 					</div>
 					<ul className="alarms w-100">
 						{
-							dataAlarms.sort((a, b) => a.time - b.time).map((item, i) => {
+							dataAlarms.map((item, i) => {
 								if (date === item.date){
 									setAudio(true);
 									if(!modal) setModal(true)
@@ -87,7 +89,7 @@ const Alarm = () => {
 												<div className="weakDays">
 													{
 														days.map((day, i) => (
-															<span key={"day" + i} className={item.actives.includes(i) && "active" || ""}>{day}</span>
+															<span key={"day" + i} className={(item.actives.includes(i) && "active") || ""}>{day}</span>
 														))
 													}
 												</div>

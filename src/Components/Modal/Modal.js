@@ -4,14 +4,12 @@ import {useState} from "react";
 import ModalWrapper from "./MoalWrapper";
 
 const Modal = ({item, stop}) => {
-	const [isModal, setIsModal] = useState(true)
 	const stopFunction = () => {
-		stop();
-		console.log("stopi")
-		setIsModal(false)
+		console.log(stop)
+		// stop.function();
 	}
 	return (
-		<ModalWrapper className={!isModal && "d-none" || ""}>
+		<ModalWrapper className={""}>
 			<div className="row">
 				<div className="col-md-8 col-lg-6 col-xxl-5 p-3">
 					<div className="box-modal w-100">

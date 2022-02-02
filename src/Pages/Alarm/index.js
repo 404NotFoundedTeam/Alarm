@@ -19,18 +19,14 @@ const Alarm = () => {
 	const [dayWeak, setDayWeak] = useState(0);
 	const [monthDay, setMonthDay] = useState(0);
 	const [month, setMonth] = useState("");
+	const [second, setSecond] = useState(0);
 	const [ctime, setCtime] = useState(new Date().toLocaleTimeString());
 	// const [date, setDate] = useState(new Date())
-
-	const uploadTime = () => {
-		setCtime(new Date().toLocaleTimeString())
-	}
 
 	useEffect(() => {
 		setInterval(() => {
 			setMinute((new Date()).getMinutes())
-			uploadTime()
-			console.log("secund")
+			setSecond((new Date().getSeconds()))
 		}, 1000);
 	}, [])
 	useEffect(() => {
@@ -65,7 +61,7 @@ const Alarm = () => {
 					<div className="alarm-header w-100 text-center pt-3">
 						<p className="title">Upcoming alarm</p>
 						<h2 className={"upcoming-time"}>6 hours 45 minutes</h2>
-						<p className="now-time">{ `${dayWeak}, ${monthDay} ${month} ${ctime}`}</p>
+						<p className="now-time">{ `${dayWeak}, ${monthDay} ${month} ${hours > 9 ? hours : "0" + hours} : ${minute>9 ? minute : "0" + minute} : ${second>9 ? second : "0" + second}`}</p>
 					</div>
 					<div className="add-alarm">
 						<Link to={'/SetAlarm'}>
@@ -81,7 +77,7 @@ const Alarm = () => {
 								}
 								return (
 									<>
-										{modal && <Modal item={item} stop={stopAudio}/>}
+										{modal && <Modal item={item} stop={{function: stopAudio}}/>}
 										<li key={"item" + i}>
 											<span className="hoursAndMinutes">{item.hours > 9 ? item.hours : "0" + item.hours} : {item.minutes > 9 ? item.minutes : "0" + item.minutes}</span>
 											<div className="options d-flex align-items-center justify-content-center">

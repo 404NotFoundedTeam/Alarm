@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Footer from "./Pages/Footer";
 
 import SetAlarm from "./Pages/SetAlarm";
+import Timer from "./Pages/Timer/Timer";
 import Sekundomer from "./Components/Sekundomer";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                     <Route exact path="/" element={<Alarm/>} />
                     <Route path="/setAlarm" element={<SetAlarm/>} />
                     <Route path="/secondomer" element={<Sekundomer/>} />
+                    <Route path="/timer" element={<Timer />} />
                 </Routes>
             </div>
           <Footer />

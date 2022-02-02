@@ -5,8 +5,7 @@ import ModalWrapper from "./MoalWrapper";
 
 const Modal = ({item, stop}) => {
 	const stopFunction = () => {
-		console.log(stop)
-		// stop.function();
+		stop.function();
 	}
 	return (
 		<ModalWrapper className={""}>

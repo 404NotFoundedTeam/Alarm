@@ -34,6 +34,9 @@ const PlayAudio = url => {
 		if(!playing){
 			setPlaying(isPlay)
 		}
+		if(playing && !isPlay){
+			setPlaying(false)
+		}
 	};
 
 	useEffect(() => {
@@ -54,5 +57,36 @@ const PlayAudio = url => {
 
 	return toggle;
 };
+const PlayVibrate = url => {
+	const [vibration] = useState(new Audio(url));
+	const [playingV, setPlayingV] = useState(false);
 
-export { getTimes, PlayAudio }
+	const toggle = (isPlay) => {
+		if(!playingV){
+			setPlayingV(isPlay)
+		}
+		if(playingV && !isPlay){
+			setPlayingV(false)
+		}
+	};
+
+	useEffect(() => {
+			if(playingV){
+				vibration.play();
+			}
+			else {
+				vibration.pause();
+				vibration.currentTime = 0;
+			}
+		},
+		[playingV]
+	)
+	vibration.addEventListener('ended', function() {
+		this.currentTime = 0;
+		this.play();
+	}, false);
+
+	return toggle;
+};
+
+export { getTimes, PlayAudio, PlayVibrate }

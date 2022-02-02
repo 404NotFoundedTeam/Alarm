@@ -64,13 +64,17 @@ const SetAlarmWrapper = styled.section`
     overflow: visible;
   }
 
-  .css-jsexje-MuiSwitch-thumb {
-    background-color: gold;
-    box-shadow: 0 0 5px gold;
+  .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase {
+    color: gray;
   }
 
-  .MuiSwitch-input:checked .css-jsexje-MuiSwitch-thumb {
-    background-color: gold !important;
+  .MuiSwitch-track {
+    background-color: #191F37 !important;
+    border: .5px solid gray;
+  }
+
+  .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+    color: gold !important;
 }
 `
 

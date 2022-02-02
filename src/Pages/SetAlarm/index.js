@@ -30,7 +30,7 @@ const SetAlarm = () => {
     <SetAlarmWrapper>
       <div className="container-fluid">
         <div className="row justify-content-center flex-column align-items-center">
-          <div className="col-6 text-center mt-4">
+          <div className="col-md-6 text-center mt-4">
             <div className="setTime d-flex justify-content-center">
               <p className="setHours fs-1">
                 {date ? `${(new Date(date)).getHours()}` : '--'}
@@ -44,7 +44,7 @@ const SetAlarm = () => {
             </div>
 
           </div>
-          <div className="col-6 p-0 mt-4">
+          <div className="col-md-6 mt-4">
             <form onSubmit={submitData} id="setAlarmForm">
               <TextField
                 id="datetime-local"

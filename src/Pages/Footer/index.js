@@ -23,7 +23,7 @@ const Footer = () => {
 						<Link to={"/secondomer"} onClick={(e)=> {lastActive(e)}}>Stopwatch</Link>
 					</div>
 					<div className="col-4">
-						<Link to={"/"} onClick={(e)=> {lastActive(e)}}>Countdown</Link>
+						<Link to={"/timer"} onClick={(e)=> {lastActive(e)}}>Timer</Link>
 					</div>
 				</div>
 			</div>

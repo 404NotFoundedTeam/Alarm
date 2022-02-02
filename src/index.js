@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import SettingsContextProvider from "./context/SettingsContext";
 
 ReactDOM.render(
 	<BrowserRouter>
-		<App />
+		<SettingsContextProvider>
+			<App />
+		</SettingsContextProvider>
 	</BrowserRouter>,
-  document.getElementById('root')
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

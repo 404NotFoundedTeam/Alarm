@@ -13,8 +13,11 @@ function BtnComponent(props) {
 
       {props.status === 1 ? (
         <div>
-          <button className="btn btn-danger" onClick={props.stop}>
+          {/* <button className="btn btn-danger" onClick={props.stop}>
             Stop
+          </button> */}
+          <button className="btn btn-success" onClick={props.resume}>
+            Next
           </button>
           <button className="btn btn-warning" onClick={props.reset}>
             Cancel
@@ -24,7 +27,7 @@ function BtnComponent(props) {
         ""
       )}
 
-      {props.status === 2 ? (
+      {/* {props.status === 2 ? (
         <div>
           <button className="btn btn-success" onClick={props.resume}>
             Resume
@@ -35,7 +38,7 @@ function BtnComponent(props) {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 }

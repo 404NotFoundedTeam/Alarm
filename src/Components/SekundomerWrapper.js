@@ -28,7 +28,22 @@ const SekundomerWrapper = styled.div`
   }
   .borderBottom {
     color: #f3df00;
-    border-bottom: 2px solid white;
+  }
+  .sekund {
+    width: 100px;
+  }
+  .row {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .col-12 {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+  }
+  .col-12::-webkit-scrollbar {
+    display: none;
   }
 `;
 export default SekundomerWrapper;

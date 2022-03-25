@@ -1,6 +1,6 @@
 import { useState, createContext } from "react";
 
-export const SettingsContext = createContext()
+export const SettingsContext = createContext({})
 
 function SettingsContextProvider(props) {
 
